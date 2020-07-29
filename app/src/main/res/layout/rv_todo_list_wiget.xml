@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:clickable="true"
+    android:orientation="horizontal"
+    android:layout_height="wrap_content"
+    android:paddingLeft="30dp"
+    android:paddingRight="30dp"
+    android:paddingTop="15dp"
+    android:paddingBottom="15dp"
+    android:layout_marginBottom="0dp"
+    android:layout_marginTop="0dp"
+    android:id="@+id/todo_task">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:layout_width="15dp"
+            android:layout_height="1dp"
+            android:background="#000"
+            android:layout_gravity="center_vertical"
+            android:id="@+id/remove_icon"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/avd_todo_tick_animation"
+                android:layout_marginRight="10dp"
+                android:layout_gravity="center"
+                android:id="@+id/tick_animation_vector_image"/>
+
+            <TextView
+                android:id="@+id/todo_task_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/open_sans"
+                android:text="ToDo Task Title"
+                android:textColor="#000"
+                android:textSize="17sp" />
+        </LinearLayout>
+
+    </FrameLayout>
+
+</LinearLayout>
