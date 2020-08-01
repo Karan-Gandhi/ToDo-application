@@ -44,12 +44,6 @@ public class RecyclerViewComponentAnimator {
             animatorX.start();
             animatorW.start();
 
-            try {
-                Thread.sleep(100);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-
             if (viewHolder.avd != null) viewHolder.avd.start();
             else if (viewHolder.avd_ != null) viewHolder.avd_.start();
         } else {
