@@ -8,20 +8,38 @@
     tools:context=".addTodoActivity"
     android:orientation="vertical">
 
-    <EditText
-        android:transitionName="Add_todo"
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/open_sans"
-        android:hint="What do you need to do?"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        android:layout_marginTop="50dp"
-        android:id="@+id/add_todo"
-        android:focusable="true"
-        android:focusedByDefault="true"
-        android:textSize="20dp"
-        android:background="@android:color/transparent"
-        android:alpha="1" />
+        android:layout_marginTop="50dp">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/open_sans"
+            android:hint="What do you need to do?"
+            android:id="@+id/add_todo_check_text_length"
+            android:textSize="20dp"
+            android:background="@android:color/transparent"
+            android:alpha="0" />
+
+        <SurfaceView
+            android:id="@+id/add_todo_background_canvas"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/open_sans"
+            android:hint="What do you need to do?"
+            android:id="@+id/add_todo"
+            android:focusable="true"
+            android:focusedByDefault="true"
+            android:textSize="20dp"
+            android:background="@android:color/transparent"
+            android:alpha="1" />
+    </FrameLayout>
 </LinearLayout>
