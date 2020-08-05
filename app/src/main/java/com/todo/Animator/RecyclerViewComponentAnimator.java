@@ -1,11 +1,12 @@
-package com.todo.Recyclerview.Animator;
+package com.todo.Animator;
 
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateDecelerateInterpolator;
 
-import com.todo.Recyclerview.Adapters.ToDoListRecyclerViewAdapter;
+import com.todo.components.RecyclerviewAdapters.ToDoListRecyclerViewAdapter;
+import com.todo.components.RecyclerviewAdapters.ToDoListRecyclerViewAdapter;
 
 public class RecyclerViewComponentAnimator {
     private ToDoListRecyclerViewAdapter.ViewHolder viewHolder;
