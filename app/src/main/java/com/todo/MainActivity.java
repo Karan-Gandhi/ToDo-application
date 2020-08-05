@@ -13,8 +13,8 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.todo.components.Recyclerview.Adapters.ToDoListRecyclerViewAdapter;
-import com.todo.components.Recyclerview.SwipeListeners.RecyclerViewSwipeListener;
+import com.todo.components.RecyclerviewAdapters.ToDoListRecyclerViewAdapter;
+import com.todo.EventListeners.RecyclerViewSwipeListener;
 
 import java.util.ArrayList;
 import java.util.Arrays;

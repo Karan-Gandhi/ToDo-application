@@ -1,4 +1,4 @@
-package com.todo.components.Recyclerview.Adapters;
+package com.todo.components.RecyclerviewAdapters;
 
 import android.graphics.drawable.AnimatedVectorDrawable;
 import android.graphics.drawable.Drawable;

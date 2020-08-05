@@ -1,4 +1,4 @@
-package com.todo.components.Recyclerview.SwipeListeners;
+package com.todo.EventListeners;
 
 import android.content.Context;
 import android.graphics.Color;

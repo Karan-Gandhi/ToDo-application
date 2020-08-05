@@ -2,30 +2,17 @@ package com.todo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.animation.ValueAnimator;
 import android.graphics.Color;
-import android.graphics.Paint;
 import android.os.Bundle;
 import android.os.Handler;
-import android.text.Editable;
 import android.text.SpannableString;
-import android.text.TextPaint;
-import android.text.TextWatcher;
-import android.text.style.BackgroundColorSpan;
-import android.text.style.StyleSpan;
-import android.text.style.UnderlineSpan;
-import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import java.sql.Time;
-import java.util.Timer;
-import java.util.TimerTask;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import com.todo.Animator.MutableBackgroundSpanAnimator;
+import com.todo.components.Interval;
+import com.todo.components.MutableBackgroundSpan;
 
 public class addTodoActivity extends AppCompatActivity {
     private EditText newTodo;
@@ -39,6 +26,7 @@ public class addTodoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_todo);
 
         newTodo = (EditText) findViewById(R.id.add_todo);
+
 
 //        final Handler checkForEntities = new Handler();
 //        checkForEntities.postDelayed(new Runnable() {
@@ -61,40 +49,61 @@ public class addTodoActivity extends AppCompatActivity {
 //            }
 //        }, 1200);
 
-        newTodo.addTextChangedListener(new TextWatcher() {
-            private boolean justChanged = false;
-            private String previous;
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                previous = charSequence.toString();
-            }
+//        newTodo.addTextChangedListener(new TextWatcher() {
+//            private boolean justChanged = false;
+//            private String previous;
+//            @Override
+//            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//                previous = charSequence.toString();
+//            }
+//
+//            @Override
+//            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//                if (previous != String.valueOf(newTodo.getText())) {
+//                    String text = String.valueOf(newTodo.getText());
+//                    SpannableString ss = new SpannableString(text);
+//                    ss.setSpan(new UnderlineSpan(), 0, text.length(), 0);
+//                    ss.setSpan(new BackgroundColorSpan(Color.GRAY), 0, text.length(), 0);
+//                    newTodo.setText(ss);
+//                    justChanged = true;
+//                    try {
+//                        Thread.sleep(100);
+//                    } catch (InterruptedException e) {
+//                        e.printStackTrace();
+//                    }
+//                } else {
+//                    justChanged = false;
+//                }
+//            }
+//
+//            @Override
+//            public void afterTextChanged(Editable editable) {
+////                justChanged = true;
+//            }
+//        });
 
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                if (previous != String.valueOf(newTodo.getText())) {
-                    String text = String.valueOf(newTodo.getText());
-                    SpannableString ss = new SpannableString(text);
-                    ss.setSpan(new UnderlineSpan(), 0, text.length(), 0);
-                    ss.setSpan(new BackgroundColorSpan(Color.GRAY), 0, text.length(), 0);
-                    newTodo.setText(ss);
-                    justChanged = true;
-                    try {
-                        Thread.sleep(100);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                } else {
-                    justChanged = false;
-                }
-            }
+//        new Interval(new Interval.CallBack() {
+//            @Override
+//            public void onEvent() {
+//                SpannableString ss = new SpannableString("234890daskjhafauasfhlafjhakdf");
+//                MutableBackgroundSpan span = new MutableBackgroundSpan(123, Color.WHITE);
+//                ss.setSpan(span, 2, 8, 0);
+//                MutableBackgroundSpanAnimator<EditText> animator = new MutableBackgroundSpanAnimator<EditText>(span, ss, newTodo);
+//            }
+//        });
 
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
             @Override
-            public void afterTextChanged(Editable editable) {
-//                justChanged = true;
+            public void run() {
+                SpannableString ss = new SpannableString("234890daskjhafauasfhlafjhakdf");
+                MutableBackgroundSpan span = new MutableBackgroundSpan(123, Color.WHITE);
+                ss.setSpan(span, 2, 8, 0);
+                MutableBackgroundSpanAnimator<EditText> animator = new MutableBackgroundSpanAnimator<EditText>(span, ss, newTodo);
+                animator.start();
+                handler.postDelayed(this, 1000);
             }
-        });
+        }, 1000);
 
-        SpannableString ss = new SpannableString("sdafghgfhgfhhf");
-        ss.setSpan(new UnderlineSpan(), 2, 8, 0);
     }
 }
